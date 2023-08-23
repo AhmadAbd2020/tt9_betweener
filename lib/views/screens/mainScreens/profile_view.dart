@@ -22,11 +22,11 @@ class ProfileView extends StatefulWidget {
 }
 
 class _ProfileViewState extends State<ProfileView> {
-  late Future<User> user;
+  late Future<String> userString;
   late Future<List<Link>> links;
   @override
   void initState() {
-    user = getLocalUser();
+    userString = getLocalUserName();
     super.initState();
   }
 
@@ -61,14 +61,14 @@ class _ProfileViewState extends State<ProfileView> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            UserPreferencesController.instance.userName,
+                            UserPreferencesController().userName,
                             style: const TextStyle(
                                 color: Colors.white,
                                 fontWeight: FontWeight.bold,
                                 fontSize: 16),
                           ),
                           Text(
-                            UserPreferencesController.instance.userEmail,
+                            UserPreferencesController().userEmail,
                             style: const TextStyle(
                                 color: Colors.white,
                                 fontWeight: FontWeight.bold,

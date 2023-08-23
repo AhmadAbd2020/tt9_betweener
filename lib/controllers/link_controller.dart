@@ -14,7 +14,7 @@ class LinksController {
     var data = await Api().post(url: linksUrl, body: {
       'title': title,
       'link': link.toString(),
-      'username': UserPreferencesController.instance.userName,
+      'username': UserPreferencesController().userName,
       'isActive': '0'
     });
     return Link.fromJson(data);

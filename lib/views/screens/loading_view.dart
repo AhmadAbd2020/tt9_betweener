@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tt9_betweener_challenge/controllers/user_controller.dart';
 import 'package:tt9_betweener_challenge/prefs/prefs.dart';
 import 'package:tt9_betweener_challenge/views/screens/authScreens/login_view.dart';
 import 'package:tt9_betweener_challenge/views/screens/main_app_view.dart';
@@ -13,7 +14,7 @@ class LoadingView extends StatefulWidget {
 
 class _LoadingViewState extends State<LoadingView> {
   void checkLogin() async {
-    if (UserPreferencesController.instance.loggedIn && mounted) {
+    if (UserPreferencesController().loggedIn && mounted) {
       Navigator.pushReplacementNamed(context, MainAppView.id);
     } else {
       Navigator.pushReplacementNamed(context, LoginView.id);

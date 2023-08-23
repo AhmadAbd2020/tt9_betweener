@@ -18,12 +18,12 @@ class HomeView extends StatefulWidget {
 }
 
 class _HomeViewState extends State<HomeView> {
-  late Future<User> user;
+  late Future<String> userName;
   late Future<List<Link>> links;
 
   @override
   void initState() {
-    user = getLocalUser();
+    userName = getLocalUserName();
     links = LinksController().getLinks(context);
     super.initState();
   }
@@ -36,7 +36,7 @@ class _HomeViewState extends State<HomeView> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            'Welcome, ${UserPreferencesController.instance.userName}!',
+            'Welcome, ${UserPreferencesController().userName}!',
             style: const TextStyle(
                 color: AppColors.kPrimaryColor,
                 fontSize: 28,

@@ -47,13 +47,13 @@ class Follow {
 }
 
 class FollowerElement {
-  int? id;
+  dynamic id;
   String? name;
   String? email;
   dynamic emailVerifiedAt;
   String? createdAt;
   String? updatedAt;
-  int? isActive;
+  dynamic isActive;
   dynamic country;
   dynamic ip;
   double? long;

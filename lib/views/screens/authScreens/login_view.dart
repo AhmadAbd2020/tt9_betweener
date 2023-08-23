@@ -1,6 +1,7 @@
 import 'package:email_validator/email_validator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:tt9_betweener_challenge/models/user.dart';
 import 'package:tt9_betweener_challenge/utilis/assets.dart';
 import 'package:tt9_betweener_challenge/prefs/prefs.dart';
 import 'package:tt9_betweener_challenge/views/screens/main_app_view.dart';
@@ -36,7 +37,7 @@ class _LoginViewState extends State<LoginView> {
       AuthController().login(body).then((user) async {
         //save user locally
 
-        await UserPreferencesController.instance.saveUser(user: user);
+        await UserPreferencesController().saveUser(user: user);
 
         if (mounted) {
           Navigator.pushReplacementNamed(context, MainAppView.id);

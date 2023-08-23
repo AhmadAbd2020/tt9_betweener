@@ -2,10 +2,10 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:tt9_betweener_challenge/models/user.dart';
 
 class UserPreferencesController {
-  static final instance = UserPreferencesController._();
+  static final _instance = UserPreferencesController._();
   late SharedPreferences sharedPreferences;
   factory UserPreferencesController() {
-    return instance;
+    return _instance;
   }
   UserPreferencesController._();
   Future<void> initSharePrefs() async {
@@ -19,6 +19,7 @@ class UserPreferencesController {
     sharedPreferences.setString('userId', "${user.user!.id}");
     sharedPreferences.setString('userEmail', "${user.user!.email}");
     sharedPreferences.setString('userName', "${user.user!.name}");
+    sharedPreferences.setString('user', userToJson(user));
   }
 
   bool get loggedIn => sharedPreferences.getBool('logged_in') ?? false;
@@ -26,6 +27,7 @@ class UserPreferencesController {
   String get userId => sharedPreferences.getString('userId') ?? "";
   String get userName => sharedPreferences.getString('userName') ?? "";
   String get userEmail => sharedPreferences.getString('userEmail') ?? "";
+  String get user => sharedPreferences.getString('user') ?? "";
   Future<bool> logout() async {
     return await sharedPreferences.clear();
   }

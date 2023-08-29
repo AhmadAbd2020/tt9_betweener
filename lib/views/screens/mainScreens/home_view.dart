@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:tt9_betweener_challenge/utilis/assets.dart';
 import 'package:tt9_betweener_challenge/controllers/link_controller.dart';
-import 'package:tt9_betweener_challenge/controllers/user_controller.dart';
 
 import '../../../prefs/prefs.dart';
 import '../../../utilis/constants.dart';
 import '../../../models/link.dart';
-import '../../../models/user.dart';
 import '../linkScreens/add_link.dart';
 
 class HomeView extends StatefulWidget {
@@ -23,7 +21,6 @@ class _HomeViewState extends State<HomeView> {
 
   @override
   void initState() {
-    userName = getLocalUserName();
     links = LinksController().getLinks(context);
     super.initState();
   }

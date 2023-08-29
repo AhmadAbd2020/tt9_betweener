@@ -9,8 +9,6 @@ import 'package:tt9_betweener_challenge/views/screens/followScreens/following_sc
 import 'package:tt9_betweener_challenge/views/screens/linkScreens/edit_link.dart';
 
 import '../../../controllers/link_controller.dart';
-import '../../../controllers/user_controller.dart';
-import '../../../models/user.dart';
 
 class ProfileView extends StatefulWidget {
   static String id = '/profileView';
@@ -22,11 +20,9 @@ class ProfileView extends StatefulWidget {
 }
 
 class _ProfileViewState extends State<ProfileView> {
-  late Future<String> userString;
   late Future<List<Link>> links;
   @override
   void initState() {
-    userString = getLocalUserName();
     super.initState();
   }
 
@@ -139,9 +135,13 @@ class _ProfileViewState extends State<ProfileView> {
                                   );
                                 }
                                 if (snap.hasError) {
-                                  return Text(snap.error.toString());
+                                  return Text(
+                                    snap.error.toString(),
+                                    style: const TextStyle(
+                                        fontSize: 8, color: Colors.white),
+                                  );
                                 }
-                                return const Text('loading');
+                                return const Center(child: Text('loading'));
                               })
                         ],
                       ),

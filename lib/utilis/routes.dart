@@ -1,3 +1,5 @@
+// ignore_for_file: implementation_imports
+
 import "package:flutter/src/widgets/framework.dart";
 
 import '../views/screens/authScreens/login_view.dart';

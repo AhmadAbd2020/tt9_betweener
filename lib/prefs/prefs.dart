@@ -19,7 +19,6 @@ class UserPreferencesController {
     sharedPreferences.setString('userId', "${user.user!.id}");
     sharedPreferences.setString('userEmail', "${user.user!.email}");
     sharedPreferences.setString('userName', "${user.user!.name}");
-    sharedPreferences.setString('user', userToJson(user));
   }
 
   bool get loggedIn => sharedPreferences.getBool('logged_in') ?? false;
@@ -27,7 +26,6 @@ class UserPreferencesController {
   String get userId => sharedPreferences.getString('userId') ?? "";
   String get userName => sharedPreferences.getString('userName') ?? "";
   String get userEmail => sharedPreferences.getString('userEmail') ?? "";
-  String get user => sharedPreferences.getString('user') ?? "";
   Future<bool> logout() async {
     return await sharedPreferences.clear();
   }

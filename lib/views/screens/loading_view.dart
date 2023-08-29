@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:tt9_betweener_challenge/controllers/user_controller.dart';
 import 'package:tt9_betweener_challenge/prefs/prefs.dart';
 import 'package:tt9_betweener_challenge/views/screens/authScreens/login_view.dart';
 import 'package:tt9_betweener_challenge/views/screens/main_app_view.dart';

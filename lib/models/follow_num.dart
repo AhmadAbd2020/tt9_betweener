@@ -56,8 +56,8 @@ class FollowerElement {
   dynamic isActive;
   dynamic country;
   dynamic ip;
-  double? long;
-  double? lat;
+  dynamic long;
+  dynamic lat;
   List<Link>? links;
 
   FollowerElement({
@@ -86,8 +86,8 @@ class FollowerElement {
         isActive: json["isActive"],
         country: json["country"],
         ip: json["ip"],
-        long: json["long"]?.toDouble(),
-        lat: json["lat"]?.toDouble(),
+        long: json["long"],
+        lat: json["lat"],
         links: json["links"] == null
             ? []
             : List<Link>.from(json["links"]!.map((x) => Link.fromJson(x))),
